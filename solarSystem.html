@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLAR SYSTEM | TEST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    nav{
+        background-color: rgb(79, 82, 112);
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    }
+    nav ul{
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }   
+    nav li{
+        height: 50px;
+    }
+    nav a{
+        height: 100%;
+        padding: 0 30px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        font-family: cursive;
+    }
+    nav a:hover{
+        background-color: #394355;
+    }
+    nav li:first-child{
+        margin-right: auto;
+    }
+
+    .intro-box{
+        background-image: url('DM0HT8_WEB.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        display: flex;
+    }
+    .intro-box .contents{
+        margin-left: 20%;
+        text-align: center;
+        color: white;
+        padding: 10%;
+        font-size: 110%;
+    }
+    .intro-box .contents h1{
+        font-size: xx-large;
+    }
+    .intro-box .contents p{
+        margin-top: 5%;
+        border-radius: 10%;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        background-color:  rgba(255, 255, 255, 0.1);
+    }
+    .TITLE_PLANET{
+        text-align: center;
+        font-family: "Permanent Marker", cursive;
+        font-size: xx-large;
+
+    }
+    .planet-container{
+        display: flex;
+        place-items: center;
+        margin-inline: 1.5rem;
+        padding-block: 5rem;
+    }
+    .card_container{
+        display: grid;
+        row-gap: 3.5rem;
+    }
+    .card_article{
+        position: relative;
+        overflow: hidden;
+    }
+    .card_img{
+        width: 328px;
+        border-radius: 1.5rem;
+    }
+    .card_data{
+        width: 280px;
+        background-color: white;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+        border-radius: 1rem;
+        position: absolute;
+        bottom: -9rem;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        opacity: 0;
+        transition: opacity 1s 1s;
+}
+.card_desc{
+    display: block;
+    font-size: small;
+    margin-bottom: .25rem;
+    font-family: Indie Flower,cursive;
+}
+.card_title{
+    font-size: xx-large;
+    font-weight: 500;
+    color: grey;
+    margin-bottom: .75rem;
+    font-family: "Permanent Marker", cursive;
+}
+.card_btn{
+    text-decoration: none;
+    font-size: small;
+    font-weight: 500;
+    color: grey;
+}
+.card_btn:hover{
+    text-decoration: underline;
+}
+
+.card_article:hover .card_data{
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+.card_article:hover{
+    animation: remove-overflow 2s forwards;
+}
+
+.card_article:not(:hover){
+    animation: show-overflow 2s forwards;
+}
+
+.card_article:not(:hover) .card_data{
+    animation: remove-data 2s forwards;
+}
+
+
+@keyframes show-data{
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-7rem);
+    }
+}
+
+@keyframes remove-overflow{
+    to{
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data{
+    0%{
+        transform: translateY(-7rem);
+    }
+    50%{
+        transform: translateY(-10rem);
+    }
+    10%{
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow{
+    0%{
+        overflow: initial;
+        pointer-events: none;
+    }
+    50%{
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 340px){
+    .planet-container{
+        margin-inline: 1rem;
+    }
+
+    .card_data{
+        width: 250px;
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card_container {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1120px){
+   .planet-container{
+    height: 100vh;
+   }
+   .card_container{
+    grid-template-columns: repeat(3, 1fr);
+   }
+   .card_img{
+    width: 348px;
+   }
+   .card_data{
+    width: 316px;
+    padding-inline: 2.5rem;
+   }
+}
+
+</style>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">NJAY's COLLECTION</a></li>
+        </ul>
+    </nav>
+    <div class="intro-box">
+        <div class="contents">
+            <h1>SOLAR SYSTEM</h1>
+            <p>The <strong>Solar System</strong>, assemblage consisting of the Sun-an average star in
+            <br> <em>Milky Way Galaxy.</em>
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="planet-i">
+        <h2 class="TITLE_PLANET">PLANET</h2>
+    </div>
+    <div class="planet-container">
+        <div class="card_container">
+
+            <article class="card_article">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/The_Sun_in_white_light.jpg/220px-The_Sun_in_white_light.jpg" alt="The Sun in true white color" class="card_img">
+                <div class="card_data">
+                    <span class="card_desc">
+                        The Sun is the star at the center of the Solar System. It is a massive, nearly perfect sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core, radiating the energy from its surface mainly as visible light and infrared radiation with 10% at ultraviolet energies.
+                    </span>
+                    <h2 class="card_title">Sun</h2>
+                    <a href="https://en.wikipedia.org/wiki/Sun" class="card_btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="card_article">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/290px-Mercury_in_true_color.jpg" alt="The Sun in true white color" class="card_img">
+                <div class="card_data">
+                    <span class="card_desc">
+                        Mercury is the first planet from the Sun and the smallest in the Solar System. In English, it is named after the ancient Roman god Mercurius (Mercury), god of commerce and communication, and the messenger of the gods.
+                    </span>
+                    <h2 class="card_title">Mercury</h2>
+                    <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" class="card_btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="card_article">
+                <img src="https://th.bing.com/th/id/R.fbd1c61112ce82b6eaabd768b1e24eb0?rik=utoAymZgbS7R%2bA&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f8%2f85%2fVenus_globe.jpg&ehk=XD7HnHWxbEeZwQYWftZEZ%2bBbQjhfu2QmyEmiJNqhp%2fg%3d&risl=1&pid=ImgRaw&r=0" alt="The Sun in true white color" class="card_img">
+                <div class="card_data">
+                    <span class="card_desc">
+                        Venus is the second planet from the Sun. It is a terrestrial planet and is the closest in mass and size to its orbital neighbour Earth.                    </span>
+                    <h2 class="card_title">Venus</h2>
+                    <a href="https://en.wikipedia.org/wiki/Venus" class="card_btn">Read More</a>
+                </div>
+            </article>  
+
+            <article class="card_article">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/The_Blue_Marble_%28remastered%29.jpg/290px-The_Blue_Marble_%28remastered%29.jpg" alt="The Sun in true white color" class="card_img">
+                <div class="card_data">
+                    <span class="card_desc">
+                        Earth is the third planet from the Sun and the only astronomical object known to harbor life. This is enabled by Earth being an ocean world, the only one in the Solar System sustaining liquid surface water. Almost all of Earth's water is contained in its global ocean, covering 70.8% of Earth's crust.
+                    </span>
+                    <h2 class="card_title">Earth</h2>
+                    <a href="https://en.wikipedia.org/wiki/Earth" class="card_btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="card_article">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png/290px-Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png" alt="The Sun in true white color" class="card_img">
+                <div class="card_data">
+                    <span class="card_desc">
+                        Mars is the fourth planet from the Sun. The surface of Mars is orange-red because it is covered in iron(III) oxide dust, giving it the nickname "the Red Planet".
+                    </span>
+                    <h2 class="card_title">Mars</h2>
+                    <a href="https://en.wikipedia.org/wiki/Mars" class="card_btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="card_article">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Jupiter_New_Horizons.jpg/290px-Jupiter_New_Horizons.jpg" alt="The Sun in true white color" class="card_img">
+                <div class="card_data">
+                    <span class="card_desc">
+                        Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than 2.5 times that of all the other planets in the Solar System combined and slightly less than one-thousandth the mass of the Sun.
+                    </span>
+                    <h2 class="card_title">Jupiter</h2>
+                    <a href="https://en.wikipedia.org/wiki/Jupiter" class="card_btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="card_article">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/300px-Saturn_during_Equinox.jpg" alt="The Sun in true white color" class="card_img">
+                <div class="card_data">
+                    <span class="card_desc">
+                        Saturn is the sixth planet from the Sun and the second largest in the Solar System, after Jupiter. It is a gas giant, with an average radius of about nine times that of Earth.                    </span>
+                    <h2 class="card_title">Saturn</h2>
+                    <a href="https://en.wikipedia.org/wiki/Saturn" class="card_btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="card_article">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Uranus_Voyager2_color_calibrated.png/290px-Uranus_Voyager2_color_calibrated.png" alt="The Sun in true white color" class="card_img">
+                <div class="card_data">
+                    <span class="card_desc">
+                        Uranus is the seventh planet from the Sun. It is a gaseous cyan-coloured ice giant. Most of the planet is made of water, ammonia, and methane in a supercritical phase of matter, which astronomy calls "ice" or volatiles.                    
+                        <h2 class="card_title">Uranus</h2>
+                    <a href="https://en.wikipedia.org/wiki/Uranus" class="card_btn">Read More</a>
+                </div>
+            </article>
+
+            <article class="card_article">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/300px-Saturn_during_Equinox.jpg" alt="The Sun in true white color" class="card_img">
+                <div class="card_data">
+                    <span class="card_desc">
+                        Neptune is the eighth and farthest known planet from the Sun. It is the fourth-largest planet in the Solar System by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth and slightly more massive, but denser and smaller, than fellow ice giant Uranus.
+                        </span>
+                        <h2 class="card_title">Neptune</h2>
+                        <a href="https://en.wikipedia.org/wiki/Uranus" class="card_btn">Read More</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
